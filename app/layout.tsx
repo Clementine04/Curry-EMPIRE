@@ -100,7 +100,7 @@ export default function RootLayout({
           toastOptions={{
             classNames: {
               toast:
-                'glass-card !rounded-2xl !border-foreground/10 !text-foreground',
+                'solid-panel pointer-events-none !rounded-2xl !border-foreground/10 !text-foreground',
             },
           }}
         />

@@ -150,6 +150,22 @@
       0 1px 0 0 color-mix(in oklch, white 60%, transparent) inset,
       0 10px 30px -12px color-mix(in oklch, var(--foreground) 18%, transparent);
   }
+  .solid-panel {
+    background: color-mix(in oklch, var(--background) 96%, white 4%);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border: 1px solid color-mix(in oklch, var(--foreground) 8%, transparent);
+    box-shadow: 0 16px 44px -24px color-mix(in oklch, var(--foreground) 24%, transparent);
+  }
+  .solid-field {
+    background: color-mix(in oklch, white 88%, var(--background) 12%);
+    border-color: color-mix(in oklch, var(--foreground) 14%, transparent);
+  }
+  .solid-sticky {
+    background: color-mix(in oklch, var(--background) 98%, white 2%);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+  }
   .text-balance {
     text-wrap: balance;
   }

@@ -156,7 +156,7 @@ export function InquiryForm({ onBack }: Props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col h-[calc(100%-72px)]"
+      className="flex min-h-0 flex-1 flex-col"
     >
       <div className="flex-1 overflow-y-auto px-3.5 min-[380px]:px-5 py-4 space-y-4">
         {!submitted ? (
@@ -198,7 +198,7 @@ export function InquiryForm({ onBack }: Props) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your full name"
-                  className="h-11 rounded-xl"
+                  className="h-12 rounded-xl solid-field text-base"
                   required
                 />
               </Field>
@@ -207,7 +207,7 @@ export function InquiryForm({ onBack }: Props) {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+63 ___ ___ ____"
-                  className="h-11 rounded-xl"
+                  className="h-12 rounded-xl solid-field text-base"
                   required
                 />
               </Field>
@@ -220,7 +220,7 @@ export function InquiryForm({ onBack }: Props) {
                         type="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                        className="h-11 rounded-xl"
+                        className="h-12 rounded-xl solid-field text-base"
                       />
                     </Field>
                     <Field label="Time">
@@ -228,7 +228,7 @@ export function InquiryForm({ onBack }: Props) {
                         type="time"
                         value={time}
                         onChange={(e) => setTime(e.target.value)}
-                        className="h-11 rounded-xl"
+                        className="h-12 rounded-xl solid-field text-base"
                       />
                     </Field>
                   </div>
@@ -239,7 +239,7 @@ export function InquiryForm({ onBack }: Props) {
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
                       placeholder="2"
-                      className="h-11 rounded-xl"
+                      className="h-12 rounded-xl solid-field text-base"
                     />
                   </Field>
                 </>
@@ -253,10 +253,10 @@ export function InquiryForm({ onBack }: Props) {
                           type="button"
                           onClick={() => setDelivery(m)}
                           className={cn(
-                            "h-11 rounded-xl text-sm transition",
+                            "h-12 rounded-xl text-sm transition",
                             delivery === m
                               ? "bg-foreground text-background"
-                              : "glass border border-foreground/10",
+                              : "solid-field border",
                           )}
                         >
                           {m === "pickup" ? "Pickup" : "Delivery"}
@@ -270,7 +270,7 @@ export function InquiryForm({ onBack }: Props) {
                         type="time"
                         value={pickupTime}
                         onChange={(e) => setPickupTime(e.target.value)}
-                        className="h-11 rounded-xl"
+                        className="h-12 rounded-xl solid-field text-base"
                       />
                     </Field>
                   )}
@@ -280,7 +280,7 @@ export function InquiryForm({ onBack }: Props) {
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         placeholder="Street, barangay, city"
-                        className="rounded-xl"
+                        className="rounded-xl solid-field text-base"
                         rows={2}
                       />
                     </Field>
@@ -296,10 +296,10 @@ export function InquiryForm({ onBack }: Props) {
                       type="button"
                       onClick={() => setPaymentMethod(method)}
                       className={cn(
-                        "h-11 rounded-xl text-sm transition",
+                        "h-12 rounded-xl text-sm transition",
                         paymentMethod === method
                           ? "bg-foreground text-background"
-                          : "glass border border-foreground/10",
+                          : "solid-field border",
                       )}
                     >
                       {method === "gcash" ? "GCash" : "Cash"}
@@ -313,7 +313,7 @@ export function InquiryForm({ onBack }: Props) {
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="Allergies, special requests..."
-                  className="rounded-xl"
+                  className="rounded-xl solid-field text-base"
                   rows={3}
                 />
               </Field>
@@ -336,11 +336,11 @@ export function InquiryForm({ onBack }: Props) {
         )}
       </div>
 
-      <div className="border-t border-foreground/5 px-3.5 min-[380px]:px-5 py-4 glass-strong">
+      <div className="border-t border-foreground/10 px-3.5 min-[380px]:px-5 pt-3 pb-[calc(env(safe-area-inset-bottom)+1rem)] solid-sticky">
         {!submitted ? (
           <Button
             type="submit"
-            className="w-full h-12 rounded-full bg-foreground text-background hover:bg-foreground/90"
+            className="w-full h-14 rounded-full bg-foreground text-background hover:bg-foreground/90 text-base font-semibold shadow-lg"
           >
             Submit Order Inquiry
           </Button>

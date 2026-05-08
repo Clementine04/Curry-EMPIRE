@@ -25,9 +25,9 @@ export function PairingSuggestion() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 24 }}
         transition={{ duration: 0.3 }}
-        className="fixed bottom-3 left-2.5 right-2.5 min-[380px]:bottom-4 min-[380px]:left-4 min-[380px]:right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:w-[380px] z-40"
+        className="fixed bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] left-2.5 right-2.5 min-[380px]:left-4 min-[380px]:right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:w-[380px] z-40"
       >
-        <div className="glass-strong rounded-[1.35rem] min-[380px]:rounded-3xl p-3.5 min-[380px]:p-4 shadow-xl">
+        <div className="solid-panel rounded-[1.35rem] min-[380px]:rounded-3xl p-3.5 min-[380px]:p-4 shadow-xl">
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex items-center gap-2">
               <span className="h-7 w-7 grid place-items-center rounded-full gold-gradient">
@@ -57,7 +57,7 @@ export function PairingSuggestion() {
             {suggestions.map((s) => (
               <div
                 key={s!.slug}
-                className="flex items-center gap-3 p-2 rounded-2xl bg-foreground/5"
+                className="flex items-center gap-3 p-2 rounded-2xl bg-white/80"
               >
                 <div className="h-10 w-10 rounded-xl overflow-hidden flex-shrink-0">
                   <FoodImage

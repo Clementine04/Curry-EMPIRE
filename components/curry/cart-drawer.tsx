@@ -42,13 +42,13 @@ export function CartDrawer() {
         side={isMobile ? "bottom" : "right"}
         showCloseButton={false}
         className={cn(
-          "p-0 border-foreground/10 bg-background/85 backdrop-blur-2xl",
+          "p-0 border-foreground/10 solid-panel",
           isMobile
             ? "rounded-t-3xl h-[90dvh] max-h-[90dvh]"
             : "w-full sm:max-w-md rounded-l-3xl",
         )}
       >
-        <SheetHeader className="px-3.5 min-[380px]:px-5 pt-4 min-[380px]:pt-5 pb-3 border-b border-foreground/5">
+        <SheetHeader className="px-3.5 min-[380px]:px-5 pt-4 min-[380px]:pt-5 pb-3 border-b border-foreground/10 bg-background/95">
           <div className="flex items-center justify-between">
             <SheetTitle className="font-serif text-lg min-[380px]:text-xl flex items-center gap-2">
               <ShoppingBag className="h-4 w-4" />
@@ -68,7 +68,7 @@ export function CartDrawer() {
         </SheetHeader>
 
         {step === "cart" ? (
-          <div className="flex flex-col h-[calc(100%-72px)]">
+          <div className="flex min-h-0 flex-1 flex-col">
             <div className="flex-1 overflow-y-auto px-3.5 min-[380px]:px-5 py-4 space-y-3">
               {cart.length === 0 ? (
                 <div className="h-full grid place-items-center text-center px-6">
@@ -140,7 +140,7 @@ export function CartDrawer() {
               )}
             </div>
 
-            <div className="border-t border-foreground/5 px-3.5 min-[380px]:px-5 py-4 space-y-3 glass-strong">
+            <div className="border-t border-foreground/10 px-3.5 min-[380px]:px-5 py-4 space-y-3 solid-sticky">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Subtotal (estimate)</span>
                 <span className="font-serif text-lg">₱{cartSubtotal}</span>
